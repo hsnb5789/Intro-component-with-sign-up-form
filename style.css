@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    /* ### Primary */
+
+    --Red: hsl(0, 100%, 74%);
+    --Green: hsl(154, 59%, 51%);
+
+    /* ### Accent */
+
+    --Blue: hsl(248, 32%, 49%);
+
+    /* ### Neutral */
+
+    --Dark_Blue: hsl(249, 10%, 26%);
+    --Grayish_Blue: hsl(246, 25%, 77%);
+
+    /* FONTS */
+    --font1: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font1);
+}
+
+html {
+    background-image: url(./images/bg-intro-mobile.png);
+    background-attachment: fixed;
+    background-color: var(--Red);
+    color: white;
+    text-align: center;
+}
+
+body {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    gap: 2rem;
+}
+
+.container {
+    margin-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.left-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-container h1 {
+    font-weight: 700;
+    width: 300px;
+}
+
+.left-container p {
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: white;
+    opacity: 0.75;
+    padding: 1rem;
+    margin-bottom: 2.5rem;
+    width: 320px;
+}
+
+.right-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    align-items: center;
+    justify-content: center;
+    width: 340px;
+}
+
+.sign-in-card {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.right-container .trial h3 {
+    background-color: var(--Blue);
+    padding: 1rem 4rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255);
+    box-shadow: 0px 8px 0 rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.right-container .trial span {
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.755);
+}
+
+
+form {
+    background-color: white;
+    margin-top: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    gap: 1rem;
+    box-shadow: 0 0.5rem 0 rgba(0, 0, 0, 0.131);
+    width: 100%;
+}
+
+input {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid var(--Grayish_Blue);
+    border-radius: 5px;
+    color: var(--Dark_Blue);
+    font-weight: 700;
+    position: relative;
+}
+
+input::-webkit-input-placeholder {
+    display: none;
+}
+
+.input-div {
+    width: 100;
+}
+
+textarea:focus,
+form input:focus {
+    outline: none;
+}
+
+form #submit-btn {
+    background-color: var(--Green);
+    color: #fff;
+    border: none;
+    padding: 1rem 0rem;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    box-shadow: 0rem 0.2rem 0.1rem rgb(47, 167, 115);
+    cursor: pointer;
+}
+
+.error-message {
+    color: var(--Red);
+    font-style: italic;
+    font-weight: 600;
+    /* padding: 0.5rem 0 0; */
+    text-align: end;
+    display: none;
+}
+
+.error-img {
+    position: absolute;
+    margin: 0.8rem 0 0 -3rem;
+    opacity: 0;
+}
+
+/* .error-message,
+.error-img {
+    display: none;
+} */
+
+form p {
+    color: var(--Grayish_Blue);
+    font-size: 0.7rem;
+    padding: 1rem 1rem 0;
+    font-weight: 400;
+    width: 280px;
+}
+
+form p a {
+    color: var(--Red);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* error states */
+.error input {
+    border: 2px solid var(--Red);
+}
+
+.error input::-webkit-input-placeholder {
+    display: none;
+}
+
+.error input:focus {
+    color: var(--Red);
+}
+
+.error .error-img {
+    opacity: 1;
+}
+
+.error .error-message {
+    display: block;
+}
+
+@media screen and (min-width:950px) {
+
+    html {
+        background-image: url(./images/bg-intro-desktop.png);
+    }
+
+    body {
+        display: grid;
+        width: 100%;
+        place-items: center;
+        min-height: 100vh;
+        margin: auto;
+        gap: 0;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .container {
+        margin: 0;
+        display: flex;
+        flex-direction: unset;
+        padding: 20px;
+        height: 100vh;
+    }
+
+    .left-container {
+        grid-column: 1/2;
+        text-align: start;
+        align-items: start;
+        width: 500px;
+        margin-right: 2rem;
+    }
+
+    .left-container h1 {
+        font-size: 40px;
+        width: 100%;
+        line-height: 3rem;
+        margin-bottom: 2rem;
+    }
+
+    .left-container p {
+        padding: 0;
+        width: 100%;
+    }
+
+    .right-container {
+        width: 500px;
+        margin: 0;
+    }
+
+    .right-container .trial h3 {
+        padding: 1rem 5rem;
+    }
+
+    form p {
+        width: 100%;
+    }
+
+
+}
